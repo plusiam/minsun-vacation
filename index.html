@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여름방학 생활 계획서</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ff7675, #fd79a8);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .avatar {
+            width: 60px;
+            height: 60px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+        
+        .goals-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #00b894;
+        }
+        
+        .goal-item {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+        }
+        
+        .goal-study { border-left-color: #0984e3; }
+        .goal-hobby { border-left-color: #e17055; }
+        .goal-family { border-left-color: #a29bfe; }
+        .goal-health { border-left-color: #00b894; }
+        
+        .schedule-section {
+            margin-bottom: 25px;
+        }
+        
+        .week-schedule {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .day-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid;
+        }
+        
+        .monday { border-top-color: #ff6b6b; }
+        .tuesday { border-top-color: #ffd93d; }
+        .wednesday { border-top-color: #6bcf7f; }
+        .thursday { border-top-color: #4ecdc4; }
+        .friday { border-top-color: #45b7d1; }
+        .saturday { border-top-color: #a29bfe; }
+        .sunday { border-top-color: #fd79a8; }
+        
+        .day-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .time-slot {
+            font-size: 11px;
+            margin: 5px 0;
+            padding: 3px 5px;
+            border-radius: 5px;
+            background: #f1f3f4;
+        }
+        
+        .study-time { background: #e3f2fd; color: #1976d2; }
+        .play-time { background: #ffebee; color: #d32f2f; }
+        .exercise-time { background: #e8f5e8; color: #388e3c; }
+        
+        .special-events {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #ff9800;
+        }
+        
+        .event-item {
+            background: white;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .event-date {
+            background: #ff9800;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        .checklist {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 8px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #4caf50;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2d3436;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile">
+                <div class="avatar">🧑‍🎓</div>
+                <div>
+                    <h1 style="margin: 0; font-size: 24px;">김민준이의 여름방학 생활 계획</h1>
+                    <p style="margin: 5px 0 0 0; opacity: 0.9;">2025년 7월 25일 ~ 8월 31일 (38일간)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="goals-section">
+            <h2 class="section-title">🎯 나의 방학 목표</h2>
+            
+            <div class="goal-item goal-study">
+                <h3 style="margin: 0 0 8px 0; color: #0984e3;">📚 학습 목표</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li>책 15권 읽기 (주 2-3권)</li>
+                    <li>수학 문제집 1권 완료</li>
+                    <li>영어 단어 200개 암기</li>
+                    <li>일기 매일 쓰기</li>
+                </ul>
+            </div>
+            
+            <div class="goal-item goal-hobby">
+                <h3 style="margin: 0 0 8px 0; color: #e17055;">🎨 취미/특기 목표</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li>수영 자유형 25m 완주</li>
+                    <li>기타 3곡 연주하기</li>
+                    <li>프라모델 2개 완성</li>
+                    <li>요리 5가지 배우기</li>
+                </ul>
+            </div>
+            
+            <div class="goal-item goal-family">
+                <h3 style="margin: 0 0 8px 0; color: #a29bfe;">👨‍👩‍👧‍👦 가족/친구 목표</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li>할머니께 주 1회 안부 전화</li>
+                    <li>동생과 보드게임 주 2회</li>
+                    <li>친구들과 월 2회 만나기</li>
+                    <li>가족 여행 사진 앨범 만들기</li>
+                </ul>
+            </div>
+            
+            <div class="goal-item goal-health">
+                <h3 style="margin: 0 0 8px 0; color: #00b894;">💪 건강 목표</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li>밤 10시 30분 전 잠자리</li>
+                    <li>아침 7시 30분 기상</li>
+                    <li>주 3회 이상 운동하기</li>
+                    <li>스마트폰 하루 3시간 이하</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="schedule-section">
+            <h2 class="section-title">📅 일주일 기본 스케줄</h2>
+            
+            <div class="week-schedule">
+                <div class="day-card monday">
+                    <div class="day-title">월요일</div>
+                    <div class="time-slot study-time">09:00 수학공부</div>
+                    <div class="time-slot">10:30 독서</div>
+                    <div class="time-slot exercise-time">14:00 수영</div>
+                    <div class="time-slot play-time">16:00 친구만나기</div>
+                </div>
+                
+                <div class="day-card tuesday">
+                    <div class="day-title">화요일</div>
+                    <div class="time-slot study-time">09:00 영어단어</div>
+                    <div class="time-slot">10:30 기타연습</div>
+                    <div class="time-slot">14:00 프라모델</div>
+                    <div class="time-slot play-time">16:00 게임시간</div>
+                </div>
+                
+                <div class="day-card wednesday">
+                    <div class="day-title">수요일</div>
+                    <div class="time-slot study-time">09:00 독서</div>
+                    <div class="time-slot">10:30 일기쓰기</div>
+                    <div class="time-slot exercise-time">14:00 축구</div>
+                    <div class="time-slot">16:00 요리배우기</div>
+                </div>
+                
+                <div class="day-card thursday">
+                    <div class="day-title">목요일</div>
+                    <div class="time-slot study-time">09:00 수학공부</div>
+                    <div class="time-slot">10:30 기타연습</div>
+                    <div class="time-slot exercise-time">14:00 수영</div>
+                    <div class="time-slot play-time">16:00 동생과게임</div>
+                </div>
+                
+                <div class="day-card friday">
+                    <div class="day-title">금요일</div>
+                    <div class="time-slot study-time">09:00 영어단어</div>
+                    <div class="time-slot">10:30 독서</div>
+                    <div class="time-slot">14:00 자유시간</div>
+                    <div class="time-slot play-time">16:00 친구만나기</div>
+                </div>
+                
+                <div class="day-card saturday">
+                    <div class="day-title">토요일</div>
+                    <div class="time-slot">09:00 늦잠자기</div>
+                    <div class="time-slot play-time">11:00 가족나들이</div>
+                    <div class="time-slot">14:00 영화보기</div>
+                    <div class="time-slot">16:00 자유시간</div>
+                </div>
+                
+                <div class="day-card sunday">
+                    <div class="day-title">일요일</div>
+                    <div class="time-slot">09:00 방정리</div>
+                    <div class="time-slot">10:30 독서</div>
+                    <div class="time-slot">14:00 다음주계획</div>
+                    <div class="time-slot">16:00 휴식</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-events">
+            <h2 class="section-title">🎉 특별 활동 & 이벤트</h2>
+            
+            <div class="event-item">
+                <div class="event-date">8/3-5</div>
+                <div>부산 가족여행 (해운대 + 아쿠아리움)</div>
+            </div>
+            
+            <div class="event-item">
+                <div class="event-date">8/10</div>
+                <div>과학관 견학 (친구 3명과 함께)</div>
+            </div>
+            
+            <div class="event-item">
+                <div class="event-date">8/15</div>
+                <div>할머니댁 방문 (사촌들과 만나기)</div>
+            </div>
+            
+            <div class="event-item">
+                <div class="event-date">8/20</div>
+                <div>수영장 수영 실력 테스트</div>
+            </div>
+            
+            <div class="event-item">
+                <div class="event-date">8/25</div>
+                <div>친구 생일파티 참석</div>
+            </div>
+            
+            <div class="event-item">
+                <div class="event-date">8/30</div>
+                <div>방학 마무리 & 개학 준비</div>
+            </div>
+        </div>
+
+        <div class="checklist">
+            <h2 class="section-title">✅ 주간 체크리스트</h2>
+            
+            <div class="check-item">
+                <div class="checkbox">□</div>
+                <div>이번 주 책 2권 이상 읽기</div>
+            </div>
+            
+            <div class="check-item">
+                <div class="checkbox">□</div>
+                <div>수학 문제 매일 10문제씩 풀기</div>
+            </div>
+            
+            <div class="check-item">
+                <div class="checkbox">□</div>
+                <div>영어 단어 주 30개 외우기</div>
+            </div>
+            
+            <div class="check-item">
+                <div class="checkbox">□</div>
+                <div>수영 3회 이상 가기</div>
+            </div>
+            
+            <div class="check-item">
+                <div class="checkbox">□</div>
+                <div>기타 연습 주 5회 하기</div>
+            </div>
+            
+            <div class="check-item">
+                <div class="checkbox">□</div>
+                <div>일기 매일 쓰기</div>
+            </div>
+            
+            <div class="check-item">
+                <div class="checkbox">□</div>
+                <div>할머니께 안부 전화드리기</div>
+            </div>
+            
+            <div class="check-item">
+                <div class="checkbox">□</div>
+                <div>일찍 자고 일찍 일어나기</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f1f3f4; border-radius: 10px;">
+            <p style="margin: 0; font-weight: bold; color: #2d3436;">
+                🌟 "계획을 세우는 것보다 실천하는 것이 더 중요해!" 🌟
+            </p>
+            <p style="margin: 5px 0 0 0; color: #636e72;">
+                매주 일요일에 체크리스트를 확인하고 다음 주 계획을 조정해보자!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
